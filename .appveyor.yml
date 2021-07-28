@@ -1,4 +1,3 @@
-
 image: Ubuntu
 
 stack: jdk 11
@@ -14,4 +13,4 @@ install:
 
 build_script:
   - chmod +x gradlew &
-  - ./gradlew test --info "-Dselenide.headless=true"  # стартуем Selenide в Headless-режиме
+  - ./gradlew test --info "-Dselenide.headless=true"
