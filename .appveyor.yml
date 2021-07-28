@@ -1,3 +1,4 @@
+
 image: Ubuntu
 
 stack: jdk 11
@@ -12,5 +13,5 @@ install:
   - java -jar ./artifacts/app-card-delivery.jar &
 
 build_script:
-  -  chmod +x gradlew
-  - ./gradlew test --info
+  - chmod +x gradlew
+  - ./gradlew test --info "-Dselenide.headless=true"  # стартуем Selenide в Headless-режиме
