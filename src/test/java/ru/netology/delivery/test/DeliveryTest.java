@@ -36,14 +36,14 @@ public class DeliveryTest {
         form.$(".checkbox__box").click();
         form.$(".button__text").click();
         $(withText("Успешно!")).should(Condition.visible);
-        $(withText(firstMeetingDate)).should(Condition.visible);
+        $(".notification__content").should(Condition.text("Встреча успешно запланирована на "+ firstMeetingDate)).should(Condition.visible);
 
         form.$("[data-test-id=date] input").doubleClick().sendKeys(Keys.DELETE);
         form.$("[data-test-id=date] input").setValue(secondMeetingDate);
         form.$(".button__text").click();
         $$(".button__content").find(Condition.exactText("Перепланировать")).click();
         $(withText("Успешно!")).should(Condition.visible);
-        $(withText(secondMeetingDate)).should(Condition.visible);
+        $(".notification__content").should(Condition.text("Встреча успешно запланирована на "+ secondMeetingDate)).should(Condition.visible);
 
     }
 }
