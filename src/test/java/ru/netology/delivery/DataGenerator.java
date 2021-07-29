@@ -8,6 +8,7 @@ import java.util.Locale;
 
 
 public class DataGenerator {
+    private static final Faker faker = new Faker(new Locale("ru"));
 
 
     private DataGenerator() {
@@ -20,13 +21,11 @@ public class DataGenerator {
     }
 
     public static String generateCity() {
-        Faker faker = new Faker(new Locale("ru"));
         String city = faker.address().city();
         return city;
     }
 
     public static String generateName() {
-        Faker faker = new Faker(new Locale("ru"));
         String firstName = faker.name().firstName();
         String lastName = faker.name().lastName();
         String name = firstName + ' ' + lastName;
@@ -34,7 +33,6 @@ public class DataGenerator {
     }
 
     public static String generatePhone() {
-        Faker faker = new Faker(new Locale("ru"));
         String phone = faker.phoneNumber().cellPhone();
         return phone;
     }
